@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sentinel X News Feed</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; }
+    body { background-color: #0b0f14; color: #e6ecf3; line-height: 1.6; padding: 2rem; }
+    h1 { color: #00ffd1; text-align: center; margin-bottom: 2rem; font-size: 2.5rem; }
+    .article { max-width: 900px; margin: 0 auto 1.5rem; background-color: #161b22; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+    .article-header { padding: 1rem 2rem; cursor: pointer; background-color: #1c2128; border-top-left-radius: 12px; border-top-right-radius: 12px; display: flex; justify-content: space-between; align-items: center; }
+    .article-header h2 { font-size: 1.5rem; color: #00ffd1; }
+    .article-header span { font-size: 1.2rem; color: #00e0c0; transition: transform 0.3s ease; }
+    .article-header.active span { transform: rotate(180deg); }
+    .article-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease, padding 0.3s ease; padding: 0 2rem; }
+    .article-content p { margin: 1rem 0; font-size: 1.1rem; }
+    footer { text-align: center; padding: 2rem; margin-top: 2rem; color: #a0a8b0; font-size: 0.95rem; }
+</style>
+</head>
+<body>
+
+<h1>Sentinel X News Feed 📰</h1>
+
+<div class="article">
+    <div class="article-header">
+        <h2>Why Sentinel X is Zimbabwe’s Future 🚀</h2>
+        <span>▼</span>
+    </div>
+    <div class="article-content">
+        <p>Sentinel X is a modular AI ecosystem and cloud OS designed for Zimbabwe. It empowers businesses, SMEs, and institutions with intelligent, locally optimized technology solutions.</p>
+        <p>Modules are flexible and scalable, including AI chatbots, IoT integration, and cloud systems. Sentinel X evolves constantly with weekly updates and documented deployments, ensuring users stay current.</p>
+        <p>As of 24 August 2024, the ecosystem is open to everyone, making it Zimbabwe’s most advanced tech platform for smart cities, data-driven infrastructure, and modular AI solutions.</p>
+    </div>
+</div>
+
+<div class="article">
+    <div class="article-header">
+        <h2>New AI Modules Released This Week 🤖</h2>
+        <span>▼</span>
+    </div>
+    <div class="article-content">
+        <p>This week, Sentinel X released new AI modules including advanced natural language processing tools, predictive analytics for SMEs, and smart automation features for schools and businesses.</p>
+        <p>These modules are fully documented and integrated into the cloud OS, allowing users to deploy them instantly. Updates are automatically communicated to all users for smooth adoption.</p>
+        <p>Sentinel X ensures that innovation is continuous and locally relevant, giving Zimbabwean tech users the advantage of state-of-the-art AI tools.</p>
+    </div>
+</div>
+
+<div class="article">
+    <div class="article-header">
+        <h2>Smart City Frameworks Expansion 🏙️</h2>
+        <span>▼</span>
+    </div>
+    <div class="article-content">
+        <p>Sentinel X is rolling out smart city frameworks in key Zimbabwean cities, integrating traffic data, energy management, and public service automation.</p>
+        <p>These frameworks allow for real-time monitoring, predictive maintenance, and enhanced citizen services. All modules are modular and can be scaled by city planners or private developers.</p>
+        <p>The goal is to create a data-driven urban infrastructure, making Zimbabwe a leader in connected, smart city technology.</p>
+    </div>
+</div>
+
+<div class="article">
+    <div class="article-header">
+        <h2>Cloud OS Performance Boost ☁️</h2>
+        <span>▼</span>
+    </div>
+    <div class="article-content">
+        <p>The Sentinel X Cloud OS has received a major performance upgrade, improving system speed, module load times, and real-time data synchronization.</p>
+        <p>Users now experience faster deployment of AI tools, smoother cloud streaming, and enhanced dashboard analytics. Updates are backward-compatible, ensuring continuity for ongoing projects.</p>
+        <p>This reinforces Sentinel X’s commitment to high-performance, reliable technology that meets modern demands.</p>
+    </div>
+</div>
+
+<div class="article">
+    <div class="article-header">
+        <h2>Open Access and Community Growth 🌐</h2>
+        <span>▼</span>
+    </div>
+    <div class="article-content">
+        <p>Sentinel X has officially opened its ecosystem to the public. Developers, educators, and entrepreneurs can now explore modules, build solutions, and deploy services.</p>
+        <p>Weekly updates, clear documentation, and community support ensure that everyone benefits from continuous innovation. Sentinel X aims to foster a tech-savvy, connected community in Zimbabwe.</p>
+        <p>The platform continues to grow with new modules and deployments, creating an evolving environment for cutting-edge innovation.</p>
+    </div>
+</div>
+
+<footer>
+    © 2025 Sentinel X. All rights reserved.
+</footer>
+
+<script>
+    const headers = document.querySelectorAll('.article-header');
+    headers.forEach(header => {
+        header.addEventListener('click', () => {
+            const currentlyActive = document.querySelector('.article-header.active');
+            if (currentlyActive && currentlyActive !== header) {
+                currentlyActive.classList.remove('active');
+                currentlyActive.nextElementSibling.style.maxHeight = null;
+                currentlyActive.nextElementSibling.style.paddingTop = '0';
+                currentlyActive.nextElementSibling.style.paddingBottom = '0';
+            }
+            header.classList.toggle('active');
+            const content = header.nextElementSibling;
+            if (header.classList.contains('active')) {
+                content.style.maxHeight = content.scrollHeight + "px";
+                content.style.paddingTop = '1rem';
+                content.style.paddingBottom = '1rem';
+            } else {
+                content.style.maxHeight = null;
+                content.style.paddingTop = '0';
+                content.style.paddingBottom = '0';
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sentinel X Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+* {box-sizing:border-box;margin:0;padding:0;font-family:'Montserrat',sans-serif;}
+body {background-color:#0b0f14;color:#e6ecf3;line-height:1.6;}
+header {background-color:#121923;padding:2rem;text-align:center;box-shadow:0 4px 8px rgba(0,0,0,0.3);}
+header img {width:120px;margin-bottom:1rem;}
+header h1 {color:#00ffd1;margin-bottom:0.5rem;font-size:2.5rem;}
+header p {color:#a0a8b0;font-size:1.1rem;}
+main {max-width:1200px;margin:2rem auto;padding:0 1rem;}
+section {margin-bottom:3rem;opacity:0;transform:translateY(30px);animation:slideIn 1s forwards;}
+section:nth-child(1){animation-delay:0.5s;}
+h2 {color:#00ffd1;margin-bottom:2rem;border-bottom:2px solid #00ffd1;display:inline-block;padding-bottom:0.3rem;}
+.services-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;}
+.service-card {background-color:#121923;padding:1.5rem;border-radius:12px;transition:transform 0.3s,box-shadow 0.3s;}
+.service-card:hover {transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,255,209,0.3);}
+.service-card h3 {color:#00ffd1;margin-bottom:0.8rem;}
+.service-card p {font-size:1.05rem;margin-bottom:1rem;}
+.service-card button {background-color:#00ffd1;color:#0b0f14;border:none;padding:0.6rem 1.2rem;border-radius:8px;font-weight:600;cursor:pointer;transition:all 0.3s;}
+.service-card button:hover {background-color:#00e0c0;transform:translateY(-2px);}
+footer {text-align:center;padding:2rem;background-color:#121923;border-top:1px solid #00ffd1;color:#a0a8b0;}
+a {color:#00ffd1;text-decoration:none;}
+a:hover {text-decoration:underline;}
+@keyframes slideIn {from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+/* Modal Styles */
+.modal {display:none;position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgba(0,0,0,0.7);}
+.modal-content {background-color:#121923;margin:5% auto;padding:2rem;border-radius:12px;width:90%;max-width:600px;text-align:center;position:relative;}
+.modal-content h3 {color:#00ffd1;margin-bottom:1rem;}
+.modal-content input, .modal-content textarea {width:100%;padding:0.5rem;margin-bottom:1rem;border-radius:6px;border:1px solid #00ffd1;background:#121923;color:#e6ecf3;}
+.modal-content button {background-color:#00ffd1;color:#0b0f14;border:none;padding:0.6rem 1.2rem;border-radius:8px;font-weight:600;cursor:pointer;margin:0.5rem;transition:all 0.3s;}
+.modal-content button:hover {background-color:#00e0c0;transform:translateY(-2px);}
+.modal-content img {width:60px;margin-bottom:1rem;}
+.close-btn {position:absolute;top:10px;right:15px;color:#fff;font-size:1.5rem;font-weight:bold;cursor:pointer;}
+</style>
+</head>
+<body>
+
+<header>
+    <img src="logo/main-logo.png" alt="Sentinel X Logo">
+    <h1>Sentinel X Services 🛠️</h1>
+    <p>Click “Request Service” to provide your business details and request via Email or WhatsApp 🚀</p>
+</header>
+
+<main>
+<section>
+    <h2>Our Services</h2>
+    <div class="services-grid">
+        <div class="service-card" data-service="Modular AI Platforms 🤖">
+            <h3>Modular AI Platforms 🤖</h3>
+            <p>Custom AI-driven solutions for automation, chatbots, and intelligent analytics.</p>
+            <button class="request-btn">Request Service 🚀</button>
+        </div>
+        <div class="service-card" data-service="Cloud OS & Infrastructure ☁️">
+            <h3>Cloud OS & Infrastructure ☁️</h3>
+            <p>Deploy Sentinel X Cloud OS for scalable, secure, and efficient cloud management.</p>
+            <button class="request-btn">Request Service 🚀</button>
+        </div>
+        <div class="service-card" data-service="Smart City Solutions 🏙️">
+            <h3>Smart City Solutions 🏙️</h3>
+            <p>Integrated urban planning and IoT systems for future-ready cities.</p>
+            <button class="request-btn">Request Service 🚀</button>
+        </div>
+        <div class="service-card" data-service="Streaming & Media Solutions 🎬">
+            <h3>Streaming & Media Solutions 🎬</h3>
+            <p>Cloud streaming systems and video-on-demand solutions.</p>
+            <button class="request-btn">Request Service 🚀</button>
+        </div>
+        <div class="service-card" data-service="Consulting & Integration 📊">
+            <h3>Consulting & Integration 📊</h3>
+            <p>Expert consulting for technology integration and workflow optimization.</p>
+            <button class="request-btn">Request Service 🚀</button>
+        </div>
+        <div class="service-card" data-service="SME Support & Custom Solutions 💼">
+            <h3>SME Support & Custom Solutions 💼</h3>
+            <p>Tailored software solutions and support for SMEs to scale efficiently.</p>
+            <button class="request-btn">Request Service 🚀</button>
+        </div>
+        <div class="service-card" data-service="Robotics & Automation 🤖⚙️">
+            <h3>Robotics & Automation 🤖⚙️</h3>
+            <p>Robotic systems and intelligent automation solutions for industry and research.</p>
+            <button class="request-btn">Request Service 🚀</button>
+        </div>
+        <div class="service-card" data-service="Embedded Systems & IoT 🛠️">
+            <h3>Embedded Systems & IoT 🛠️</h3>
+            <p>Custom embedded solutions, microcontroller projects, and IoT systems.</p>
+            <button class="request-btn">Request Service 🚀</button>
+        </div>
+    </div>
+</section>
+</main>
+
+<footer>
+    <p>© 2025 Sentinel X. All rights reserved. | <a href="contact.html">Contact Us 📧</a></p>
+</footer>
+
+<!-- Modal -->
+<div id="serviceModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <img src="logo/main-logo.png" alt="Robot Icon 🤖">
+        <h3>Provide your business details and choose Email or WhatsApp 📬</h3>
+        <input type="text" id="businessName" placeholder="Business Name" required>
+        <input type="text" id="businessAddress" placeholder="Business Address" required>
+        <input type="text" id="contactPerson" placeholder="Contact Person Name" required>
+        <input type="text" id="phone" placeholder="Phone Number" required>
+        <input type="email" id="email" placeholder="Email Address" required>
+        <textarea id="customMessage" placeholder="Custom Message (optional)" rows="4"></textarea>
+        <div>
+            <button id="emailBtn">Email ✉️</button>
+            <button id="whatsappBtn">WhatsApp 📱</button>
+        </div>
+    </div>
+</div>
+
+<script>
+// Modal logic
+let modal = document.getElementById("serviceModal");
+let closeBtn = document.querySelector(".close-btn");
+let emailBtn = document.getElementById("emailBtn");
+let whatsappBtn = document.getElementById("whatsappBtn");
+let selectedService = '';
+
+document.querySelectorAll('.request-btn').forEach(btn=>{
+    btn.addEventListener('click', (e)=>{
+        selectedService = e.target.closest('.service-card').getAttribute('data-service');
+        modal.style.display = "block";
+    });
+});
+
+closeBtn.onclick = ()=>{modal.style.display = "none";}
+window.onclick = (e)=>{if(e.target == modal){modal.style.display = "none";}}
+
+// Email via FormSubmit
+emailBtn.addEventListener('click', ()=>{
+    const businessName = document.getElementById('businessName').value.trim();
+    const businessAddress = document.getElementById('businessAddress').value.trim();
+    const contactPerson = document.getElementById('contactPerson').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const customMessage = document.getElementById('customMessage').value.trim();
+
+    if(!businessName || !businessAddress || !contactPerson || !phone || !email){
+        alert("Please fill out all required fields.");
+        return;
+    }
+
+    modal.style.display = "none";
+
+    const formHtml = `
+    <form action="https://formsubmit.co/sentinelxzw@gmail.com" method="POST" target="_blank">
+        <input type="hidden" name="_subject" value="Sentinel X Service Request">
+        <input type="hidden" name="Service" value="${selectedService}">
+        <input type="hidden" name="Business Name" value="${businessName}">
+        <input type="hidden" name="Business Address" value="${businessAddress}">
+        <input type="hidden" name="Contact Person" value="${contactPerson}">
+        <input type="hidden" name="Phone" value="${phone}">
+        <input type="hidden" name="Email" value="${email}">
+        <input type="hidden" name="Message" value="${customMessage}">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_autoresponse" value="Thank you for your request. We will contact you shortly.">
+        <button type="submit">Send Request 🚀</button>
+    </form>`;
+
+    const emailWindow = window.open();
+    emailWindow.document.write(`<html><head><title>Request ${selectedService}</title><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"><style>body{background:#0b0f14;color:#e6ecf3;font-family:'Montserrat',sans-serif;padding:2rem;}button{background:#00ffd1;color:#0b0f14;padding:0.6rem 1.2rem;border:none;border-radius:8px;cursor:pointer;font-weight:600;}button:hover{background:#00e0c0;}</style></head><body><img src="logo/main-logo.png" width="100"><h2>Requesting: ${selectedService}</h2>${formHtml}</body></html>`);
+});
+
+// WhatsApp
+whatsappBtn.addEventListener('click', ()=>{
+    const businessName = document.getElementById('businessName').value.trim();
+    const businessAddress = document.getElementById('businessAddress').value.trim();
+    const contactPerson = document.getElementById('contactPerson').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const customMessage = document.getElementById('customMessage').value.trim();
+
+    if(!businessName || !businessAddress || !contactPerson || !phone || !email){
+        alert("Please fill out all required fields.");
+        return;
+    }
+
+    modal.style.display = "none";
+
+    const waMessage = `*Sentinel X Service Request*%0A*Service:* ${encodeURIComponent(selectedService)}%0A*Business Name:* ${encodeURIComponent(businessName)}%0A*Address:* ${encodeURIComponent(businessAddress)}%0A*Contact Person:* ${encodeURIComponent(contactPerson)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Email:* ${encodeURIComponent(email)}%0A*Message:* ${encodeURIComponent(customMessage)}`;
+    const waLink = `https://wa.me/263777932721?text=${waMessage}`;
+    window.open(waLink, '_blank');
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Sentinel X</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+    * {box-sizing:border-box; margin:0; padding:0; font-family:'Montserrat', sans-serif;}
+    body {background-color:#0b0f14; color:#e6ecf3; line-height:1.6;}
+    header {background-color:#121923; padding:2rem; text-align:center; box-shadow:0 4px 8px rgba(0,0,0,0.3);}
+    header img {width:120px; margin-bottom:1rem;}
+    header h1 {color:#00ffd1; margin-bottom:0.5rem; font-size:2.5rem;}
+    header p {color:#a0a8b0; font-size:1.1rem;}
+    main {max-width:900px; margin:2rem auto; padding:0 1rem;}
+    section {margin-bottom:3rem; opacity:0; transform:translateY(30px); animation:slideIn 1s forwards;}
+    section:nth-child(1){animation-delay:0.5s;}
+    section:nth-child(2){animation-delay:1s;}
+    h2 {color:#00ffd1; margin-bottom:1rem; border-bottom:2px solid #00ffd1; display:inline-block; padding-bottom:0.3rem;}
+    p {margin-bottom:1rem; font-size:1.1rem;}
+    footer {text-align:center; padding:2rem; background-color:#121923; border-top:1px solid #00ffd1; color:#a0a8b0;}
+    a {color:#00ffd1; text-decoration:none;}
+    a:hover {text-decoration:underline;}
+    form {background-color:#121923; padding:1.5rem; border-radius:10px;}
+    label {display:block; margin-bottom:0.5rem; font-weight:600;}
+    input, textarea {width:100%; padding:0.6rem; margin-bottom:1rem; border-radius:6px; border:1px solid #00ffd1; background-color:#0b0f14; color:#e6ecf3;}
+    button {background-color:#00ffd1; color:#0b0f14; padding:0.8rem 1.5rem; border:none; border-radius:8px; font-weight:600; cursor:pointer; transition:all 0.3s;}
+    button:hover {background-color:#00e0c0; transform:translateY(-2px);}
+    @keyframes slideIn {from{opacity:0; transform:translateY(30px);} to{opacity:1; transform:translateY(0);}}
+</style>
+</head>
+<body>
+
+<header>
+    <img src="logo/main-logo.png" alt="Sentinel X Logo">
+    <h1>Contact Sentinel X 📞</h1>
+    <p>Reach us via email, WhatsApp, or submit your business request below.</p>
+</header>
+
+<main>
+    <section>
+        <h2>Contact Info 📧</h2>
+        <p>Email: <a href="mailto:sentinelxzw@gmail.com">sentinelxzw@gmail.com</a></p>
+        <p>WhatsApp / Call: <a href="https://wa.me/263777932721" target="_blank">+263 77 793 2721 (Zimbabwe)</a></p>
+    </section>
+
+    <section>
+        <h2>Business Request Console 🏢</h2>
+        <p>If your business is interested in Sentinel X services, fill in the form below and we will reach out to you directly on WhatsApp.</p>
+        <form id="businessForm">
+            <label for="company">Business Name *</label>
+            <input type="text" id="company" name="company" placeholder="Your business name" required>
+
+            <label for="owner">Owner / Contact Person *</label>
+            <input type="text" id="owner" name="owner" placeholder="Full name" required>
+
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+            <label for="phone">Phone Number *</label>
+            <input type="text" id="phone" name="phone" placeholder="+263 ..." required>
+
+            <label for="services">Requested Services *</label>
+            <textarea id="services" name="services" rows="4" placeholder="Describe the services you need" required></textarea>
+
+            <button type="submit">Submit Request 🚀</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>© 2025 Sentinel X. All rights reserved. | <a href="about.html">About Us 🌟</a></p>
+</footer>
+
+<script>
+document.getElementById('businessForm').addEventListener('submit', function(e){
+    e.preventDefault(); // prevent page reload
+
+    // Collect form data
+    const company = encodeURIComponent(document.getElementById('company').value);
+    const owner = encodeURIComponent(document.getElementById('owner').value);
+    const email = encodeURIComponent(document.getElementById('email').value);
+    const phone = encodeURIComponent(document.getElementById('phone').value);
+    const services = encodeURIComponent(document.getElementById('services').value);
+
+    // Construct WhatsApp message
+    const message = `*New Business Request*%0A%0A*Business Name:* ${company}%0A*Owner:* ${owner}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A*Requested Services:* ${services}`;
+
+    // WhatsApp API link (replace number with your number in international format)
+    const waLink = `https://wa.me/263777932721?text=${message}`;
+
+    // Open WhatsApp in new tab
+    window.open(waLink, '_blank');
+});
+</script>
+
+</body>
+</html>

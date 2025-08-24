@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sentinel X Blog</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Montserrat', sans-serif;
+    }
+    body {
+        background-color: #0b0f14;
+        color: #e6ecf3;
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+    header {
+        background-color: #121923;
+        padding: 2rem;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        position: relative;
+    }
+    header img {
+        width: 120px;
+        height: auto;
+        margin-bottom: 1rem;
+        animation: fadeIn 2s ease forwards;
+    }
+    header h1 {
+        font-size: 2.5rem;
+        color: #00ffd1;
+        margin-bottom: 0.5rem;
+        animation: fadeIn 2s ease forwards;
+    }
+    header p {
+        font-size: 1.2rem;
+        color: #a0a8b0;
+        animation: fadeIn 2.5s ease forwards;
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+        background-color: #1c2128;
+        padding: 1rem 0;
+        gap: 2rem;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    nav a {
+        color: #00ffd1;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+    nav a:hover {
+        color: #00e0c0;
+        text-decoration: underline;
+    }
+    main {
+        max-width: 900px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+    section {
+        margin-bottom: 3rem;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: slideIn 1s forwards;
+    }
+    section:nth-child(1) { animation-delay: 0.5s; }
+    section:nth-child(2) { animation-delay: 1s; }
+    section:nth-child(3) { animation-delay: 1.5s; }
+    section h2 {
+        color: #00ffd1;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #00ffd1;
+        display: inline-block;
+        padding-bottom: 0.3rem;
+    }
+    section p {
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+    }
+    .visit-button {
+        display: inline-block;
+        background-color: #00ffd1;
+        color: #0b0f14;
+        font-weight: 600;
+        padding: 0.8rem 1.5rem;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        margin-top: 1rem;
+    }
+    .visit-button:hover {
+        background-color: #00e0c0;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 15px rgba(0,255,209,0.4);
+    }
+    .iframe-preview {
+        width: 100%;
+        height: 500px;
+        border: 2px solid #00ffd1;
+        border-radius: 12px;
+        margin-top: 1rem;
+        overflow: hidden;
+    }
+    .sla-note {
+        font-size: 0.95rem;
+        color: #a0a8b0;
+        margin-top: 0.5rem;
+    }
+    footer {
+        text-align: center;
+        padding: 2rem;
+        background-color: #121923;
+        border-top: 1px solid #00ffd1;
+        color: #a0a8b0;
+        margin-top: 2rem;
+    }
+    a {
+        color: #00ffd1;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    /* Animations */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideIn {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <img src="logo/main-logo.png" alt="Sentinel X Logo">
+    <h1>Sentinel X Blog 🚀</h1>
+    <p>Exploring technology, innovation, and solutions for Zimbabwe and beyond 🌍</p>
+</header>
+
+<nav>
+    <a href="index.html">Home 🏠</a>
+    <a href="services.html">Services 🛠️</a>
+    <a href="contact.html">Contact 📧</a>
+    <a href="SLA.html">SLA 📄</a>
+    <a href="about.html">About ℹ️</a>
+    <a href="news.html">SentX-News 📡</a>
+</nav>
+
+<main>
+    <section>
+        <h2>What We Do 💡</h2>
+        <p>Sentinel X is a modular AI operating system designed to integrate tools, services, and solutions into a unified cloud ecosystem. We build platforms that empower businesses, SMEs, educational institutions, and individuals to access smart technology, automate processes, and leverage real-time data in ways previously unavailable.</p>
+        <p>From AI chatbots 🤖 to cloud streaming systems ☁️, from smart city frameworks 🏙️ to personalized software solutions, Sentinel X is at the forefront of creating a connected and intelligent Zimbabwean digital landscape.</p>
+    </section>
+
+    <section>
+        <h2>Why We Do It ❤️</h2>
+        <p>We believe Zimbabwe deserves a homegrown, scalable, and future-ready technology ecosystem. Too often, solutions are imported without considering local needs, constraints, or context. Sentinel X exists to bridge that gap, providing locally optimized systems that elevate learning, entrepreneurship, governance, and everyday digital experiences.</p>
+        <p>Our mission is to turn challenges into opportunities by leveraging innovation ⚡, efficiency, and open-source collaboration, making technology accessible and practical for everyone.</p>
+    </section>
+
+    <section>
+        <h2>Join Us on the Journey 🌟</h2>
+        <p>We release new modules and deployments every week. As you use the platform, developments and upgrades will appear, and all updates will be well documented and communicated to ensure a smooth experience. Sentinel X is constantly evolving, and our commitment to transparency and usability remains strong.</p>
+        <p>As of 24 August 2024, the Sentinel X ecosystem is now open for everyone to use! Dive in, explore, and start leveraging the power of modular AI and cloud systems today. 🚀</p>
+        <a href="https://sentinelxzimbabwe.github.io/sentinel-x-official-landing-page-v2.0" class="visit-button">Visit Sentinel X Cloud OS ☁️</a>
+        <iframe src="https://sentinelxzimbabwe.github.io/sentinel-x-official-landing-page-v2.0" class="iframe-preview" title="Sentinel X Cloud OS Preview"></iframe>
+    </section>
+</main>
+
+<footer>
+    <p>© 2025 Sentinel X. All rights reserved. | <a href="contact.html">Contact Us 📧</a></p>
+    <p class="sla-note">⚠️ All clients are strongly advised to read the <a href="SLA.html">SLA agreement</a></p>
+</footer>
+
+</body>
+</html>
