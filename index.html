@@ -42,24 +42,68 @@
         color: #a0a8b0;
         animation: fadeIn 2.5s ease forwards;
     }
+
+    /* Updated responsive nav */
     nav {
-        display: flex;
-        justify-content: center;
         background-color: #1c2128;
-        padding: 1rem 0;
-        gap: 2rem;
         box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
-    nav a {
+    .nav-container {
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.8rem 1rem;
+    }
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+    }
+    .nav-links a {
         color: #00ffd1;
         text-decoration: none;
         font-weight: 600;
         transition: color 0.3s ease;
     }
-    nav a:hover {
+    .nav-links a:hover {
         color: #00e0c0;
         text-decoration: underline;
     }
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+    }
+    .hamburger div {
+        width: 25px;
+        height: 3px;
+        background-color: #00ffd1;
+        transition: all 0.3s ease;
+    }
+    /* Mobile Styles */
+    @media screen and (max-width: 768px) {
+        .nav-links {
+            position: absolute;
+            top: 70px;
+            right: 0;
+            background-color: #1c2128;
+            flex-direction: column;
+            width: 200px;
+            padding: 1rem;
+            gap: 1rem;
+            display: none;
+            border-left: 1px solid #00ffd1;
+        }
+        .nav-links.active {
+            display: flex;
+        }
+        .hamburger {
+            display: flex;
+        }
+    }
+
     main {
         max-width: 900px;
         margin: 2rem auto;
@@ -129,7 +173,6 @@
     a:hover {
         text-decoration: underline;
     }
-    /* Animations */
     @keyframes fadeIn {
         from { opacity: 0; transform: translateY(-20px); }
         to { opacity: 1; transform: translateY(0); }
@@ -149,12 +192,22 @@
 </header>
 
 <nav>
-    <a href="index.html">Home 🏠</a>
-    <a href="services.html">Services 🛠️</a>
-    <a href="contact.html">Contact 📧</a>
-    <a href="SLA.html">SLA 📄</a>
-    <a href="about.html">About ℹ️</a>
-    <a href="news.html">SentX-News 📡</a>
+    <div class="nav-container">
+        <div class="nav-logo">☁️</div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home 🏠</a>
+            <a href="services.html">Services 🛠️</a>
+            <a href="contact.html">Contact 📧</a>
+            <a href="SLA.html">SLA 📄</a>
+            <a href="about.html">About ℹ️</a>
+            <a href="news.html">SentX-News 📡</a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
 </nav>
 
 <main>
@@ -183,6 +236,15 @@
     <p>© 2025 Sentinel X. All rights reserved. | <a href="contact.html">Contact Us 📧</a></p>
     <p class="sla-note">⚠️ All clients are strongly advised to read the <a href="SLA.html">SLA agreement</a></p>
 </footer>
+
+<script>
+// Mobile menu toggle
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+</script>
 
 </body>
 </html>
