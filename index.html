@@ -170,17 +170,22 @@
             right: 10px;
             background-color: #1c2128;
             flex-direction: column;
-            width: auto;
-            padding: 0.5rem 1rem;
+            width: 200px;
+            padding: 0.8rem 0;
             border-radius: 10px;
             display: none;
             box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            z-index: 1000;
         }
         .nav-links a {
-            padding: 0.5rem 1rem;
-            border-bottom: none;
-            width: auto;
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #00ffd1;
+            width: 100%;
             text-align: left;
+            display: block;
+        }
+        .nav-links a:last-child {
+            border-bottom: none;
         }
         .nav-links.active {
             display: flex;
