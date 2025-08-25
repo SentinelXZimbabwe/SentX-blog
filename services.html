@@ -125,6 +125,7 @@ let emailBtn = document.getElementById("emailBtn");
 let whatsappBtn = document.getElementById("whatsappBtn");
 let selectedService = '';
 
+// Open modal
 document.querySelectorAll('.request-btn').forEach(btn=>{
     btn.addEventListener('click', (e)=>{
         selectedService = e.target.closest('.service-card').getAttribute('data-service');
@@ -132,10 +133,11 @@ document.querySelectorAll('.request-btn').forEach(btn=>{
     });
 });
 
-closeBtn.onclick = ()=>{modal.style.display = "none";}
-window.onclick = (e)=>{if(e.target == modal){modal.style.display = "none";}}
+// Close modal
+closeBtn.onclick = ()=>{ modal.style.display = "none"; }
+window.onclick = (e)=>{ if(e.target == modal){ modal.style.display = "none"; } }
 
-// Email with redirect
+// Email Button
 emailBtn.addEventListener('click', ()=>{
     const businessName = document.getElementById('businessName').value.trim();
     const businessAddress = document.getElementById('businessAddress').value.trim();
@@ -151,7 +153,7 @@ emailBtn.addEventListener('click', ()=>{
 
     modal.style.display = "none";
 
-    // Create and submit a hidden form
+    // Create and submit hidden form
     const form = document.createElement('form');
     form.action = "https://formsubmit.co/sentinelxzw@gmail.com";
     form.method = "POST";
@@ -180,12 +182,9 @@ emailBtn.addEventListener('click', ()=>{
 
     document.body.appendChild(form);
     form.submit();
-
-    // Redirect after 2 seconds
-    setTimeout(()=>{ window.location.href = 'https://sentinelxzimbabwe.github.io/SentX-blog/services.html'; }, 2000);
 });
 
-// WhatsApp
+// WhatsApp Button
 whatsappBtn.addEventListener('click', ()=>{
     const businessName = document.getElementById('businessName').value.trim();
     const businessAddress = document.getElementById('businessAddress').value.trim();
@@ -201,5 +200,12 @@ whatsappBtn.addEventListener('click', ()=>{
 
     modal.style.display = "none";
 
-    const waMessage = `*Sentinel X Service Request*%0A*Service:* ${encodeURIComponent(selectedService)}%0A*Business Name:* ${encodeURIComponent(businessName)}%0A*Address:* ${encodeURIComponent(businessAddress)}%0A*Contact Person:* ${encodeURIComponent(contactPerson)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Email:* ${encodeURIComponent(email)}%0A*Message:* ${encodeURIComponent(customMessage)}`;
-   
+    const waMessage = `*Sentinel X Service Request*\n*Service:* ${selectedService}\n*Business Name:* ${businessName}\n*Address:* ${businessAddress}\n*Contact Person:* ${contactPerson}\n*Phone:* ${phone}\n*Email:* ${email}\n*Message:* ${customMessage}`;
+    
+    const waURL = `https://wa.me/263${phone.replace(/^0/,'')}?text=${encodeURIComponent(waMessage)}`;
+    window.open(waURL, '_blank');
+});
+</script>
+
+</body>
+</html>
