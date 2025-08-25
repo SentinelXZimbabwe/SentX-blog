@@ -153,11 +153,9 @@ emailBtn.addEventListener('click', ()=>{
 
     modal.style.display = "none";
 
-    // Create and submit hidden form
     const form = document.createElement('form');
     form.action = "https://formsubmit.co/sentinelxzw@gmail.com";
     form.method = "POST";
-    form.target = "_blank";
 
     const inputs = {
         "_subject": "Sentinel X Service Request",
@@ -169,7 +167,8 @@ emailBtn.addEventListener('click', ()=>{
         "Email": email,
         "Message": customMessage,
         "_template": "table",
-        "_autoresponse": "Thank you for your request. We will contact you shortly."
+        "_autoresponse": "Thank you for your request. We will contact you shortly.",
+        "_next": "thank-you.html"
     };
 
     for (let key in inputs){
@@ -189,20 +188,19 @@ whatsappBtn.addEventListener('click', ()=>{
     const businessName = document.getElementById('businessName').value.trim();
     const businessAddress = document.getElementById('businessAddress').value.trim();
     const contactPerson = document.getElementById('contactPerson').value.trim();
-    const phone = document.getElementById('phone').value.trim();
     const email = document.getElementById('email').value.trim();
     const customMessage = document.getElementById('customMessage').value.trim();
 
-    if(!businessName || !businessAddress || !contactPerson || !phone || !email){
+    if(!businessName || !businessAddress || !contactPerson || !email){
         alert("Please fill out all required fields.");
         return;
     }
 
     modal.style.display = "none";
 
-    const waMessage = `*Sentinel X Service Request*\n*Service:* ${selectedService}\n*Business Name:* ${businessName}\n*Address:* ${businessAddress}\n*Contact Person:* ${contactPerson}\n*Phone:* ${phone}\n*Email:* ${email}\n*Message:* ${customMessage}`;
+    const waMessage = `*Sentinel X Service Request*\n*Service:* ${selectedService}\n*Business Name:* ${businessName}\n*Address:* ${businessAddress}\n*Contact Person:* ${contactPerson}\n*Email:* ${email}\n*Message:* ${customMessage}`;
     
-    const waURL = `https://wa.me/263${phone.replace(/^0/,'')}?text=${encodeURIComponent(waMessage)}`;
+    const waURL = `https://wa.me/263777932721?text=${encodeURIComponent(waMessage)}`;
     window.open(waURL, '_blank');
 });
 </script>
