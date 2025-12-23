@@ -3,264 +3,312 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sentinel X Blog</title>
+<title>Sentinel-X Platform Update</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
 <style>
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        font-family: 'Montserrat', sans-serif;
-    }
-    body {
-        background-color: #0b0f14;
-        color: #e6ecf3;
-        line-height: 1.6;
-        overflow-x: hidden;
-    }
-    header {
-        background-color: #121923;
-        padding: 2rem;
-        text-align: center;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        position: relative;
-    }
-    header img {
-        width: 120px;
-        height: auto;
-        margin-bottom: 1rem;
-        animation: fadeIn 2s ease forwards;
-    }
-    header h1 {
-        font-size: 2.5rem;
-        color: #00ffd1;
-        margin-bottom: 0.5rem;
-        animation: fadeIn 2s ease forwards;
-    }
-    header p {
-        font-size: 1.2rem;
-        color: #a0a8b0;
-        animation: fadeIn 2.5s ease forwards;
-    }
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Montserrat',sans-serif}
 
-    nav {
-        background-color: #1c2128;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-    .nav-container {
-        max-width: 900px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0.8rem 1rem;
-        position: relative;
-    }
-    .nav-links {
-        display: flex;
-        gap: 2rem;
-    }
-    .nav-links a {
-        color: #00ffd1;
-        text-decoration: none;
-        font-weight: 600;
-        transition: color 0.3s ease;
-    }
-    .nav-links a:hover {
-        color: #00e0c0;
-        text-decoration: underline;
-    }
-    .hamburger {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-        gap: 5px;
-    }
-    .hamburger div {
-        width: 25px;
-        height: 3px;
-        background-color: #00ffd1;
-        transition: all 0.3s ease;
-    }
+body{
+  background:#0b0f14;
+  color:#e6ecf3;
+  line-height:1.7;
+  overflow-x:hidden;
+  position:relative;
+}
 
-    main {
-        max-width: 900px;
-        margin: 2rem auto;
-        padding: 0 1rem;
-    }
-    section {
-        margin-bottom: 3rem;
-        opacity: 0;
-        transform: translateY(30px);
-        animation: slideIn 1s forwards;
-    }
-    section:nth-child(1) { animation-delay: 0.5s; }
-    section:nth-child(2) { animation-delay: 1s; }
-    section:nth-child(3) { animation-delay: 1.5s; }
-    section h2 {
-        color: #00ffd1;
-        margin-bottom: 1rem;
-        border-bottom: 2px solid #00ffd1;
-        display: inline-block;
-        padding-bottom: 0.3rem;
-    }
-    section p {
-        margin-bottom: 1rem;
-        font-size: 1.1rem;
-    }
-    .visit-button {
-        display: inline-block;
-        background-color: #00ffd1;
-        color: #0b0f14;
-        font-weight: 600;
-        padding: 0.8rem 1.5rem;
-        border-radius: 10px;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        margin-top: 1rem;
-    }
-    .visit-button:hover {
-        background-color: #00e0c0;
-        transform: translateY(-3px);
-        box-shadow: 0 4px 15px rgba(0,255,209,0.4);
-    }
-    .iframe-preview {
-        width: 100%;
-        height: 500px;
-        border: 2px solid #00ffd1;
-        border-radius: 12px;
-        margin-top: 1rem;
-        overflow: hidden;
-    }
-    .sla-note {
-        font-size: 0.95rem;
-        color: #a0a8b0;
-        margin-top: 0.5rem;
-    }
-    footer {
-        text-align: center;
-        padding: 2rem;
-        background-color: #121923;
-        border-top: 1px solid #00ffd1;
-        color: #a0a8b0;
-        margin-top: 2rem;
-    }
-    a {
-        color: #00ffd1;
-        text-decoration: none;
-    }
-    a:hover {
-        text-decoration: underline;
-    }
+/* Logo watermark – smaller & more visible */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:url("logo/sns.png") center/220px no-repeat;
+  opacity:0.08;
+  animation:vibrate 7s infinite ease-in-out;
+  pointer-events:none;
+  z-index:-1;
+}
 
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(-20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes slideIn {
-        from { opacity: 0; transform: translateY(30px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
+@keyframes vibrate{
+  0%{transform:translate(0,0)}
+  25%{transform:translate(1px,-1px)}
+  50%{transform:translate(-1px,1px)}
+  75%{transform:translate(1px,0)}
+  100%{transform:translate(0,0)}
+}
 
-    /* Mobile Styles */
-    @media screen and (max-width: 768px) {
-        .nav-links {
-            position: absolute;
-            top: 50px;
-            right: 10px;
-            background-color: #1c2128;
-            flex-direction: column;
-            width: 200px;
-            padding: 0.8rem 0;
-            border-radius: 10px;
-            display: none;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-            z-index: 1000;
-        }
-        .nav-links a {
-            padding: 0.8rem 1rem;
-            border-bottom: 1px solid #00ffd1;
-            width: 100%;
-            text-align: left;
-            display: block;
-        }
-        .nav-links a:last-child {
-            border-bottom: none;
-        }
-        .nav-links.active {
-            display: flex;
-        }
-        .hamburger {
-            display: flex;
-        }
-    }
+header{
+  background:#121923;
+  padding:2.5rem 1.5rem;
+  text-align:center;
+  border-bottom:1px solid #00ffd1;
+  animation:fadeDown 1.2s ease forwards;
+}
+
+header img{width:110px;margin-bottom:1rem}
+
+header h1{color:#00ffd1;font-size:2.4rem;margin-bottom:0.4rem}
+
+header p{color:#a0a8b0;font-size:1.1rem}
+
+@keyframes fadeDown{
+  from{opacity:0;transform:translateY(-30px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+main{
+  max-width:960px;
+  margin:3rem auto;
+  padding:0 1.2rem;
+}
+
+section{
+  margin-bottom:3.4rem;
+  opacity:0;
+  animation:fadeUp 1s forwards;
+}
+
+section:nth-child(1){animation-delay:.3s}
+section:nth-child(2){animation-delay:.6s}
+section:nth-child(3){animation-delay:.9s}
+section:nth-child(4){animation-delay:1.2s}
+section:nth-child(5){animation-delay:1.5s}
+section:nth-child(6){animation-delay:1.8s}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+section h2{
+  color:#00ffd1;
+  font-size:1.6rem;
+  margin-bottom:1rem;
+  border-bottom:2px solid #00ffd1;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding-bottom:0.3rem;
+}
+
+.card{
+  background:#121923;
+  border-radius:14px;
+  padding:1.8rem;
+  border-left:4px solid #00ffd1;
+}
+
+.card p{margin-bottom:0.9rem}
+
+.icon-list{
+  margin-top:1rem;
+  padding-left:0;
+}
+
+.icon-list li{
+  list-style:none;
+  margin-bottom:0.6rem;
+}
+
+.icon-list i{color:#00ffd1;margin-right:10px}
+
+.countdown{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:15px;
+  margin-top:1.6rem;
+}
+
+.time-box{
+  background:#0f1622;
+  border:1px solid #00ffd1;
+  border-radius:12px;
+  text-align:center;
+  padding:1.3rem;
+  animation:pulse 2s infinite;
+}
+
+.time-box h3{font-size:2rem;color:#00ffd1}
+.time-box span{font-size:0.9rem;color:#a0a8b0}
+
+@keyframes pulse{
+  0%{box-shadow:0 0 0 rgba(0,255,209,0)}
+  50%{box-shadow:0 0 18px rgba(0,255,209,0.35)}
+  100%{box-shadow:0 0 0 rgba(0,255,209,0)}
+}
+
+.whatsapp-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  background:#25D366;
+  color:#0b0f14;
+  padding:0.9rem 1.6rem;
+  border-radius:12px;
+  font-weight:700;
+  text-decoration:none;
+  margin-top:1rem;
+  transition:.3s;
+}
+
+.whatsapp-btn:hover{
+  background:#20b954;
+  transform:translateY(-3px);
+}
+
+.festive{margin-top:2rem}
+
+footer{
+  margin-top:4rem;
+  padding:2rem;
+  text-align:center;
+  background:#121923;
+  border-top:1px solid #00ffd1;
+  color:#a0a8b0;
+}
 </style>
 </head>
+
 <body>
 
 <header>
-    <img src="logo/sns.png" alt="Sentinel X Logo">
-    <h1>Sentinel Nexus Systems🚀</h1>
-    <p>Exploring technology, innovation, and solutions for Zimbabwe and beyond 🌍</p>
+  <img src="logo/sns.png" alt="Sentinel-X Logo">
+  <h1>Sentinel-X Platform Update</h1>
+  <p><i class="fa-solid fa-layer-group"></i> Clarity • Accessibility • Responsible Scaling</p>
 </header>
 
-<nav>
-    <div class="nav-container">
-        <div class="nav-logo">☁️</div>
-        <div class="nav-links" id="navLinks">
-            <a href="index.html">Home 🏠</a>
-            <a href="services.html">Services 🛠️</a>
-            <a href="contact.html">Contact 📧</a>
-            <a href="SLA.html">SLA 📄</a>
-            <a href="about.html">About ℹ️</a>
-            <a href="news.html">SentX-News 📡</a>
-        </div>
-        <div class="hamburger" id="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
-</nav>
-
 <main>
-    <section>
-        <h2>What We Do 💡</h2>
-        <p>Sentinel X is a modular AI operating system designed to integrate tools, services, and solutions into a unified cloud ecosystem. We build platforms that empower businesses, SMEs, educational institutions, and individuals to access smart technology, automate processes, and leverage real-time data in ways previously unavailable.</p>
-        <p>From AI chatbots 🤖 to cloud streaming systems ☁️, from smart city frameworks 🏙️ to personalized software solutions, Sentinel X is at the forefront of creating a connected and intelligent Zimbabwean digital landscape.</p>
-    </section>
 
-    <section>
-        <h2>Why We Do It ❤️</h2>
-        <p>We believe Zimbabwe deserves a homegrown, scalable, and future-ready technology ecosystem. Too often, solutions are imported without considering local needs, constraints, or context. Sentinel X exists to bridge that gap, providing locally optimized systems that elevate learning, entrepreneurship, governance, and everyday digital experiences.</p>
-        <p>Our mission is to turn challenges into opportunities by leveraging innovation ⚡, efficiency, and open-source collaboration, making technology accessible and practical for everyone.</p>
-    </section>
+<section>
+  <h2><i class="fa-solid fa-bullhorn"></i> Community Notice</h2>
+  <div class="card">
+    <p>
+      We recognise that the technical language used across parts of the platform increased a
+      psychological barrier to adoption 🧠.
+    </p>
+    <p>
+      Going forward, all Sentinel-X systems will be <strong>simpler to use, more direct</strong>,
+      and written in <strong>less technical language</strong> ✨ — without reducing system power.
+    </p>
+  </div>
+</section>
 
-    <section>
-        <h2>Join Us on the Journey 🌟</h2>
-        <p>We release new modules and deployments every week. As you use the platform, developments and upgrades will appear, and all updates will be well documented and communicated to ensure a smooth experience. Sentinel X is constantly evolving, and our commitment to transparency and usability remains strong.</p>
-        <p>As of 24 August 2024, the Sentinel X ecosystem is now open for everyone to use! Dive in, explore, and start leveraging the power of modular AI and cloud systems today. 🚀</p>
-        <a href="https://sentinelxzimbabwe.github.io/sentinel-x-official-landing-page-v2.0" class="visit-button">Visit Sentinel X Cloud OS ☁️</a>
-        <iframe src="https://sentinelxzimbabwe.github.io/sentinel-x-official-landing-page-v2.0" class="iframe-preview" title="Sentinel X Cloud OS Preview"></iframe>
-    </section>
+<section>
+  <h2><i class="fa-solid fa-sitemap"></i> Ecosystem Structure</h2>
+  <div class="card">
+    <ul class="icon-list">
+      <li><i class="fa-solid fa-users"></i> Sentinel-X Ecosystem → users, students, communities, SMEs, private companies</li>
+      <li><i class="fa-solid fa-building-columns"></i> Sentinel-X Corporates → municipalities, government bodies, custom contracts</li>
+      <li><i class="fa-solid fa-shield-halved"></i> Enterprise governance and formal engagement frameworks</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2><i class="fa-solid fa-clock"></i> Beta Launch Countdown</h2>
+  <div class="card">
+    <p>All beta access launches are scheduled for:</p>
+    <p style="font-size:1.5rem;color:#00ffd1;font-weight:700;">7 January 2026</p>
+    <div class="countdown" id="countdown"></div>
+  </div>
+</section>
+
+<section>
+  <h2><i class="fa-solid fa-credit-card"></i> Payments & Paynow</h2>
+  <div class="card">
+    <p>
+      🔔 <strong>All users are required to have a Paynow account.</strong>
+    </p>
+    <p>
+      👉 Create one here:
+      <a href="https://www.paynow.co.zw" target="_blank" style="color:#00ffd1;font-weight:700;">
+        https://www.paynow.co.zw
+      </a>
+    </p>
+    <p>
+      💳 From <strong>7 January 2026</strong>, all payments will be made
+      <strong>online via Paynow gateways</strong> inside Sentinel-Nexus Systems.
+    </p>
+    <p>
+      📨 For custom contracts, secure payment buttons will be emailed directly to clients.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2><i class="fa-solid fa-code"></i> Core Developers</h2>
+  <div class="card">
+    <ul class="icon-list">
+      <li><i class="fa-solid fa-user-astronaut"></i> Mthokozisi Thabiso Sapuwa</li>
+      <li><i class="fa-solid fa-user-gear"></i> Mthabisi Welshman Mkhwananzi</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2><i class="fa-solid fa-gift"></i> Festive Season</h2>
+  <div class="card festive">
+    <p>
+      🎄 We wish our entire community a happy festive season and a powerful start to 2026.
+    </p>
+
+    <!-- Canva Embed: New Year -->
+    <div style="position: relative; width: 100%; height: 0; padding-top: 56.25%;
+     padding-bottom: 0; box-shadow: 0 2px 8px rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+     border-radius: 8px;">
+      <iframe loading="lazy" style="position:absolute;width:100%;height:100%;top:0;left:0;border:none"
+        src="https://www.canva.com/design/DAG8WQGFPpo/y-rHTCYfJTGukIjwDnXAVw/watch?embed" allowfullscreen></iframe>
+    </div>
+
+    <!-- Canva Embed: Christmas -->
+    <div style="position: relative; width: 100%; height: 0; padding-top: 70.7071%;
+     padding-bottom: 0; box-shadow: 0 2px 8px rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+     border-radius: 8px;">
+      <iframe loading="lazy" style="position:absolute;width:100%;height:100%;top:0;left:0;border:none"
+        src="https://www.canva.com/design/DAG8WRFhlTs/0gGMhZHoJ5IOoyNJFvXCtQ/view?embed" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><i class="fa-solid fa-phone"></i> Contact</h2>
+  <div class="card" style="text-align:center">
+    <a class="whatsapp-btn"
+       href="https://wa.me/263787556929"
+       target="_blank">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+    </a>
+  </div>
+</section>
+
 </main>
 
 <footer>
-    <p>© 2025 Sentinel X. All rights reserved. | <a href="contact.html">Contact Us 📧</a></p>
-    <p class="sla-note">⚠️ All clients are strongly advised to read the <a href="SLA.html">SLA agreement</a></p>
+  © 2025 Sentinel-X • Designed & maintained by Sentinel Nexus Systems
 </footer>
 
 <script>
-// Mobile menu toggle
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('navLinks');
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
+const launchDate = new Date("2026-01-07T00:00:00").getTime();
+const el = document.getElementById("countdown");
+
+setInterval(()=>{
+  const now = Date.now();
+  const diff = launchDate - now;
+  const d = Math.floor(diff / (1000*60*60*24));
+  const h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+  const m = Math.floor((diff%(1000*60*60))/(1000*60));
+  const s = Math.floor((diff%(1000*60))/1000);
+
+  el.innerHTML = `
+    <div class="time-box"><h3>${d}</h3><span>Days</span></div>
+    <div class="time-box"><h3>${h}</h3><span>Hours</span></div>
+    <div class="time-box"><h3>${m}</h3><span>Minutes</span></div>
+    <div class="time-box"><h3>${s}</h3><span>Seconds</span></div>
+  `;
+},1000);
 </script>
 
 </body>
 </html>
-
-
-
