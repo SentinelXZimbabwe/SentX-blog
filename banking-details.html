@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sentinel Nexus Systems | Banking Details</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Montserrat',sans-serif}
+
+body{
+  background:#0b0f14;
+  color:#e6ecf3;
+  line-height:1.7;
+}
+
+/* Logo watermark */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:url("logo/sns.png") center/260px no-repeat;
+  opacity:0.05;
+  pointer-events:none;
+  z-index:-1;
+}
+
+header{
+  background:#121923;
+  padding:2.5rem 1.5rem;
+  text-align:center;
+  border-bottom:1px solid #00ffd1;
+}
+
+header h1{
+  color:#00ffd1;
+  font-size:2.2rem;
+  margin-bottom:0.4rem;
+}
+
+header p{
+  color:#a0a8b0;
+  font-size:1.05rem;
+}
+
+main{
+  max-width:800px;
+  margin:3rem auto;
+  padding:0 1.2rem;
+}
+
+section{margin-bottom:3rem}
+
+section h2{
+  color:#00ffd1;
+  font-size:1.6rem;
+  margin-bottom:1rem;
+  border-bottom:2px solid #00ffd1;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding-bottom:0.3rem;
+}
+
+.card{
+  background:#121923;
+  border-radius:16px;
+  padding:2rem;
+  border-left:4px solid #00ffd1;
+}
+
+.bank-box{
+  background:#0f1622;
+  border:1px dashed #00ffd1;
+  border-radius:14px;
+  padding:1.6rem;
+  font-size:1.05rem;
+}
+
+.bank-box p{
+  margin-bottom:0.6rem;
+}
+
+.notice{
+  margin-top:1.5rem;
+  font-size:0.95rem;
+  color:#a0a8b0;
+}
+
+button{
+  margin-top:1.8rem;
+  width:100%;
+  padding:0.9rem;
+  background:#00ffd1;
+  color:#0b0f14;
+  border:none;
+  border-radius:10px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.secondary-btn{
+  background:#1a2333;
+  color:#00ffd1;
+  border:1px solid #00ffd1;
+}
+
+footer{
+  margin-top:4rem;
+  padding:2rem;
+  text-align:center;
+  background:#121923;
+  border-top:1px solid #00ffd1;
+  color:#a0a8b0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Banking Details</h1>
+  <p><i class="fa-solid fa-building-columns"></i> Official Corporate Account</p>
+</header>
+
+<main>
+
+<section>
+  <h2><i class="fa-solid fa-credit-card"></i> Payment Information</h2>
+  <div class="card">
+
+    <div class="bank-box">
+      <p>🏦 <strong>Bank:</strong> BancABC</p>
+      <p>🏢 <strong>Account Name:</strong> Sentinel Nexus Systems PBC</p>
+      <p>🔢 <strong>Account Number:</strong> 92348806602321</p>
+      <p>📍 <strong>Branch:</strong> Bulawayo</p>
+    </div>
+
+    <div class="notice">
+      ⚠️ All payments for Sentinel Nexus Systems services must be made
+      <strong>only</strong> to the corporate account listed above.
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2><i class="fa-solid fa-location-dot"></i> Bank Branch Address</h2>
+  <div class="card">
+
+    <div class="bank-box">
+      <p>
+        📍 <strong>BancABC – Bulawayo Branch</strong><br>
+        Jason Moyo Street<br>
+        Bulawayo, Bulawayo Province<br>
+        Zimbabwe
+      </p>
+    </div>
+
+    <div class="notice">
+      This address is provided for verification, reference,
+      and official documentation purposes.
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="card" style="text-align:center">
+    <a href="index.html">
+      <button class="secondary-btn">← Back to Main Portal</button>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  © 2026 Sentinel Nexus Systems • Official Banking Information
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sentinel Nexus Systems | Attendance Register & Marker</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Montserrat',sans-serif}
+
+body{
+  background:#0b0f14;
+  color:#e6ecf3;
+  line-height:1.7;
+}
+
+/* Logo watermark */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:url("logo/sns.png") center/260px no-repeat;
+  opacity:0.05;
+  pointer-events:none;
+  z-index:-1;
+}
+
+header{
+  background:#121923;
+  padding:2.5rem 1.5rem;
+  text-align:center;
+  border-bottom:1px solid #00ffd1;
+}
+
+header h1{
+  color:#00ffd1;
+  font-size:2.2rem;
+  margin-bottom:0.4rem;
+}
+
+header p{
+  color:#a0a8b0;
+  font-size:1.05rem;
+}
+
+main{
+  max-width:1000px;
+  margin:3rem auto;
+  padding:0 1.2rem;
+}
+
+section{margin-bottom:4rem}
+
+section h2{
+  color:#00ffd1;
+  font-size:1.6rem;
+  margin-bottom:1rem;
+  border-bottom:2px solid #00ffd1;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding-bottom:0.3rem;
+}
+
+.card{
+  background:#121923;
+  border-radius:16px;
+  padding:2rem;
+  border-left:4px solid #00ffd1;
+}
+
+ul{
+  margin-left:1.2rem;
+}
+
+ul li{
+  margin-bottom:0.6rem;
+}
+
+.price-box{
+  margin-top:1.5rem;
+  padding:1.5rem;
+  background:#0f1622;
+  border:1px dashed #00ffd1;
+  border-radius:14px;
+}
+
+label{
+  display:block;
+  margin-top:1rem;
+  font-weight:600;
+}
+
+label i{
+  color:#00ffd1;
+  margin-right:6px;
+}
+
+input, select{
+  width:100%;
+  padding:0.7rem;
+  margin-top:0.3rem;
+  border-radius:8px;
+  border:1px solid #2a3342;
+  background:#0f1622;
+  color:#e6ecf3;
+}
+
+button{
+  margin-top:1.5rem;
+  width:100%;
+  padding:0.9rem;
+  background:#00ffd1;
+  color:#0b0f14;
+  border:none;
+  border-radius:10px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.secondary-btn{
+  background:#1a2333;
+  color:#00ffd1;
+  border:1px solid #00ffd1;
+}
+
+.notice{
+  margin-top:1.2rem;
+  font-size:0.95rem;
+  color:#a0a8b0;
+}
+
+.bank{
+  margin-top:1rem;
+  padding:1.2rem;
+  background:#0f1622;
+  border:1px dashed #00ffd1;
+  border-radius:12px;
+}
+
+footer{
+  margin-top:4rem;
+  padding:2rem;
+  text-align:center;
+  background:#121923;
+  border-top:1px solid #00ffd1;
+  color:#a0a8b0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Attendance Register & Marker</h1>
+  <p><i class="fa-solid fa-clipboard-check"></i> Attendance Tracking & Reporting System</p>
+</header>
+
+<main>
+
+<!-- INTRO -->
+<section>
+  <div class="card">
+    <p>
+      📋 Sentinel Nexus Systems provides a <strong>buy-once attendance register and marker system</strong>
+      designed for accurate attendance tracking and reporting.<br><br>
+      ⚙️ The system works <strong>offline</strong> and is deployed locally at the institution.
+    </p>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section>
+  <h2><i class="fa-solid fa-list-check"></i> System Features</h2>
+  <div class="card">
+    <ul>
+      <li>📝 Daily attendance marking</li>
+      <li>👩‍🎓 Student / learner attendance tracking</li>
+      <li>👨‍🏫 Class, grade, or course-based registers</li>
+      <li>📊 Attendance reports & summaries</li>
+      <li>📁 Exportable attendance data</li>
+      <li>🖥 Works offline (no internet required)</li>
+      <li>🔐 Secure local access</li>
+    </ul>
+  </div>
+</section>
+
+<!-- INSTITUTIONS -->
+<section>
+  <h2><i class="fa-solid fa-school"></i> Suitable For</h2>
+  <div class="card">
+    <ul>
+      <li>👶 ECD Centers</li>
+      <li>🏫 Primary Schools</li>
+      <li>🎒 Secondary / High Schools</li>
+      <li>🏢 Tertiary Institutions</li>
+      <li>🎓 Universities</li>
+      <li>📚 Training & Learning Centers</li>
+    </ul>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section>
+  <h2><i class="fa-solid fa-tags"></i> Pricing</h2>
+  <div class="card">
+
+    <div class="price-box">
+      💵 <strong>System Price:</strong> USD $150.00 (Once-Off)<br><br>
+      🔐 Buy once • Own the system • <strong>No recurring fees</strong>
+    </div>
+
+    <div class="notice">
+      ⏳ Deployment is completed after payment confirmation and POP submission.
+    </div>
+
+  </div>
+</section>
+
+<!-- PAYMENT -->
+<section>
+  <h2><i class="fa-solid fa-building-columns"></i> Payment Information</h2>
+  <div class="card">
+
+    <div class="bank">
+      🏦 <strong>Bank:</strong> BancABC<br>
+      📍 <strong>Branch:</strong> Bulawayo<br>
+      🏢 <strong>Account Name:</strong> Sentinel Nexus Systems PBC<br>
+      🔢 <strong>Account Number:</strong> 92348806602321
+    </div>
+
+    <div class="notice">
+      ⚠️ After payment, institutions must send:<br>
+      • <strong>Proof of Payment (POP)</strong><br>
+      • <strong>Institution logo</strong> (for system branding)<br>
+      via WhatsApp.
+    </div>
+
+  </div>
+</section>
+
+<!-- ORDER FORM -->
+<section>
+  <h2><i class="fa-solid fa-clipboard-list"></i> Attendance System Order Form</h2>
+  <div class="card">
+
+    <form id="attendanceForm">
+      <label><i class="fa-solid fa-school"></i> Institution Name</label>
+      <input type="text" id="institutionName" required>
+
+      <label><i class="fa-solid fa-layer-group"></i> Institution Type</label>
+      <select id="institutionType" required>
+        <option value="">-- Select Institution Type --</option>
+        <option>ECD</option>
+        <option>Primary School</option>
+        <option>Secondary / High School</option>
+        <option>Tertiary Institution</option>
+        <option>University</option>
+        <option>Training Center</option>
+      </select>
+
+      <label><i class="fa-solid fa-user"></i> Contact Person</label>
+      <input type="text" id="contactPerson" required>
+
+      <label><i class="fa-solid fa-phone"></i> Phone Number</label>
+      <input type="text" id="phoneNumber" required>
+
+      <label><i class="fa-solid fa-location-dot"></i> Institution Location</label>
+      <input type="text" id="location" required>
+
+      <button type="submit">
+        <i class="fa-brands fa-whatsapp"></i> Submit Request & Send POP
+      </button>
+    </form>
+
+    <div class="notice">
+      • Submitting this form does not activate deployment.<br>
+      • Deployment begins only after POP and logo are received.
+    </div>
+
+  </div>
+</section>
+
+<!-- NAV -->
+<section>
+  <div class="card" style="text-align:center">
+    <a href="index.html">
+      <button class="secondary-btn">← Back to Main Portal</button>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  © 2026 Sentinel Nexus Systems • Attendance Systems
+</footer>
+
+<script>
+document.getElementById("attendanceForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const institutionName = document.getElementById("institutionName").value;
+  const institutionType = document.getElementById("institutionType").value;
+  const contactPerson = document.getElementById("contactPerson").value;
+  const phoneNumber = document.getElementById("phoneNumber").value;
+  const location = document.getElementById("location").value;
+
+  const message = `
+ATTENDANCE REGISTER & MARKER SYSTEM REQUEST
+
+Institution: ${institutionName}
+Type: ${institutionType}
+Contact Person: ${contactPerson}
+Phone: ${phoneNumber}
+Location: ${location}
+
+System Price: USD $150.00 (Once-Off)
+No recurring fees.
+
+I will now send Proof of Payment (POP)
+and the Institution Logo.
+`;
+
+  window.open(
+    "https://wa.me/263787556929?text=" + encodeURIComponent(message),
+    "_blank"
+  );
+});
+</script>
+
+</body>
+</html>

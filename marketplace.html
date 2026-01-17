@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sentinel Nexus Systems | Marketplace Onboarding</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Montserrat',sans-serif}
+
+body{
+  background:#0b0f14;
+  color:#e6ecf3;
+  line-height:1.7;
+}
+
+/* Logo watermark */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:url("logo/sns.png") center/260px no-repeat;
+  opacity:0.05;
+  pointer-events:none;
+  z-index:-1;
+}
+
+header{
+  background:#121923;
+  padding:2.5rem 1.5rem;
+  text-align:center;
+  border-bottom:1px solid #00ffd1;
+}
+
+header h1{
+  color:#00ffd1;
+  font-size:2.2rem;
+  margin-bottom:0.4rem;
+}
+
+header p{
+  color:#a0a8b0;
+  font-size:1.05rem;
+}
+
+main{
+  max-width:1000px;
+  margin:3rem auto;
+  padding:0 1.2rem;
+}
+
+section{margin-bottom:4rem}
+
+section h2{
+  color:#00ffd1;
+  font-size:1.6rem;
+  margin-bottom:1rem;
+  border-bottom:2px solid #00ffd1;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding-bottom:0.3rem;
+}
+
+.card{
+  background:#121923;
+  border-radius:16px;
+  padding:2rem;
+  border-left:4px solid #00ffd1;
+}
+
+ul{
+  margin-left:1.2rem;
+}
+
+ul li{
+  margin-bottom:0.6rem;
+}
+
+.price-box{
+  margin-top:1.5rem;
+  padding:1.5rem;
+  background:#0f1622;
+  border:1px dashed #00ffd1;
+  border-radius:14px;
+}
+
+.price-box strong{
+  color:#00ffd1;
+}
+
+label{
+  display:block;
+  margin-top:1rem;
+  font-weight:600;
+}
+
+label i{
+  color:#00ffd1;
+  margin-right:6px;
+}
+
+input{
+  width:100%;
+  padding:0.7rem;
+  margin-top:0.3rem;
+  border-radius:8px;
+  border:1px solid #2a3342;
+  background:#0f1622;
+  color:#e6ecf3;
+}
+
+button{
+  margin-top:1.5rem;
+  width:100%;
+  padding:0.9rem;
+  background:#00ffd1;
+  color:#0b0f14;
+  border:none;
+  border-radius:10px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.secondary-btn{
+  background:#1a2333;
+  color:#00ffd1;
+  border:1px solid #00ffd1;
+}
+
+.notice{
+  margin-top:1.5rem;
+  font-size:0.95rem;
+  color:#a0a8b0;
+}
+
+footer{
+  margin-top:4rem;
+  padding:2rem;
+  text-align:center;
+  background:#121923;
+  border-top:1px solid #00ffd1;
+  color:#a0a8b0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Marketplace Onboarding</h1>
+  <p><i class="fa-solid fa-store"></i> Digital Marketplace Access & Maintenance</p>
+</header>
+
+<main>
+
+<!-- INTRO -->
+<section>
+  <div class="card">
+    <p>
+      🛒 Sentinel Nexus Systems provides a structured digital marketplace
+      where vendors, sellers, and service providers can list and operate securely.
+      <br><br>
+      ⚙️ This service includes onboarding, system setup, and ongoing maintenance.
+    </p>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section>
+  <h2><i class="fa-solid fa-tags"></i> Marketplace Pricing</h2>
+  <div class="card">
+
+    <ul>
+      <li>🧾 <strong>Once-off onboarding fee:</strong> USD $12.00</li>
+      <li>🛠 <strong>Monthly debugging & maintenance:</strong> USD $3.00 / month</li>
+      <li>💳 <strong>First payment (Month 1):</strong> USD $15.00</li>
+    </ul>
+
+    <div class="price-box">
+      <p>
+        💡 <strong>Explanation:</strong><br>
+        • Month 1 = $12 onboarding + $3 maintenance = <strong>$15.00</strong><br>
+        • From Month 2 onward = <strong>$3.00 monthly</strong>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- PAYMENT RULE -->
+<section>
+  <h2><i class="fa-solid fa-circle-exclamation"></i> Important Payment Rule</h2>
+  <div class="card">
+    <p>
+      ⚠️ Marketplace access is <strong>not activated</strong> until payment is confirmed.<br><br>
+      📤 After submitting the request, users must send their
+      <strong>Proof of Payment (POP)</strong> via WhatsApp.
+    </p>
+  </div>
+</section>
+
+<!-- ONBOARDING FORM -->
+<section>
+  <h2><i class="fa-solid fa-clipboard-list"></i> Marketplace Onboarding Request</h2>
+  <div class="card">
+
+    <form id="marketplaceForm">
+      <label><i class="fa-solid fa-user"></i> Full Name</label>
+      <input type="text" id="fullName" required>
+
+      <label><i class="fa-solid fa-building"></i> Business / Store Name</label>
+      <input type="text" id="businessName" required>
+
+      <label><i class="fa-solid fa-phone"></i> Phone Number</label>
+      <input type="text" id="phoneNumber" required>
+
+      <label><i class="fa-solid fa-box"></i> Type of Products / Services</label>
+      <input type="text" id="category" required>
+
+      <button type="submit">
+        <i class="fa-brands fa-whatsapp"></i> Submit Request & Send POP
+      </button>
+    </form>
+
+    <div class="notice">
+      • Submitting this form does not activate your marketplace account.<br>
+      • <strong>POP must be sent via WhatsApp after submission.</strong><br>
+      • ❌ No POP = No activation.
+    </div>
+
+  </div>
+</section>
+
+<!-- NAV -->
+<section>
+  <div class="card" style="text-align:center">
+    <a href="index.html">
+      <button class="secondary-btn">← Back to Main Portal</button>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  © 2026 Sentinel Nexus Systems • Marketplace Services
+</footer>
+
+<script>
+document.getElementById("marketplaceForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const fullName = document.getElementById("fullName").value;
+  const businessName = document.getElementById("businessName").value;
+  const phoneNumber = document.getElementById("phoneNumber").value;
+  const category = document.getElementById("category").value;
+
+  const message = `
+MARKETPLACE ONBOARDING REQUEST
+
+Name: ${fullName}
+Business: ${businessName}
+Phone: ${phoneNumber}
+Category: ${category}
+
+Initial Payment: USD $15.00 (Onboarding + Month 1)
+I will now send Proof of Payment (POP).
+`;
+
+  window.open(
+    "https://wa.me/263787556929?text=" + encodeURIComponent(message),
+    "_blank"
+  );
+});
+</script>
+
+</body>
+</html>
