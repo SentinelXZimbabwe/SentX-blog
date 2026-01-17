@@ -73,7 +73,7 @@ h2{
   border-left:4px solid var(--accent);
 }
 
-/* TABS */
+/* DESKTOP TABS */
 .tabs{
   display:flex;
   gap:10px;
@@ -102,6 +102,37 @@ h2{
 .tab-content{display:none}
 .tab-content.active{display:block}
 
+/* MOBILE MENU */
+.hamburger{
+  display:none;
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  background:var(--accent);
+  color:#0b0f14;
+  align-items:center;
+  justify-content:center;
+  font-size:1.4rem;
+  cursor:pointer;
+  animation:pulse 2s infinite;
+  margin-bottom:1.2rem;
+}
+
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(0,255,209,.6)}
+  70%{box-shadow:0 0 0 14px rgba(0,255,209,0)}
+  100%{box-shadow:0 0 0 0 rgba(0,255,209,0)}
+}
+
+.mobile-tabs{
+  display:none;
+  flex-direction:column;
+  gap:10px;
+  margin-bottom:1.5rem;
+}
+
+.mobile-tabs.show{display:flex}
+
 /* SYSTEM CARD */
 .system{
   background:var(--soft);
@@ -110,19 +141,13 @@ h2{
   padding:1.8rem;
 }
 
-.system h3{
-  color:var(--accent);
-  margin-bottom:.6rem;
-}
+.system h3{color:var(--accent)}
+.system p{color:#d5dde6}
 
-.system p{
-  color:#d5dde6;
-}
-
-.system .price{
+.price{
   margin-top:.8rem;
   font-weight:700;
-  color:#00ffd1;
+  color:var(--accent);
 }
 
 .system a{
@@ -207,7 +232,12 @@ footer a{
   text-decoration:none;
   margin:0 .6rem;
 }
-footer a:hover{color:var(--accent)}
+
+/* MOBILE RULES */
+@media(max-width:768px){
+  .tabs{display:none}
+  .hamburger{display:flex}
+}
 </style>
 </head>
 
@@ -221,99 +251,106 @@ footer a:hover{color:var(--accent)}
 
 <main>
 
-<!-- SYSTEMS -->
 <section>
 <h2>🧩 Platforms & Systems</h2>
 <div class="card">
 
-<div class="tabs">
-  <div class="tab active" onclick="openTab('web')">🌐 Websites</div>
-  <div class="tab" onclick="openTab('reg')">📝 School Registration</div>
-  <div class="tab" onclick="openTab('attendance')">📋 Attendance</div>
-  <div class="tab" onclick="openTab('accounting')">💰 School Accounting</div>
-  <div class="tab" onclick="openTab('library')">📚 Digital Library</div>
-  <div class="tab" onclick="openTab('property')">🏠 Property Management</div>
-  <div class="tab" onclick="openTab('marketplace')">🛒 Marketplace</div>
-  <div class="tab" onclick="openTab('docs')">📄 Documentation Pack</div>
+<div class="hamburger" onclick="toggleMenu()">
+  <i class="fa-solid fa-bars"></i>
 </div>
 
-<!-- WEBSITES -->
+<div class="tabs">
+  <div class="tab active" onclick="openTab('web')">🌐 Websites</div>
+  <div class="tab" onclick="openTab('reg')">📝 Registration</div>
+  <div class="tab" onclick="openTab('attendance')">📋 Attendance</div>
+  <div class="tab" onclick="openTab('accounting')">💰 Accounting</div>
+  <div class="tab" onclick="openTab('library')">📚 Library</div>
+  <div class="tab" onclick="openTab('property')">🏠 Property</div>
+  <div class="tab" onclick="openTab('marketplace')">🛒 Marketplace</div>
+  <div class="tab" onclick="openTab('docs')">📄 Documentation</div>
+</div>
+
+<div class="mobile-tabs" id="mobileTabs">
+  <div class="tab" onclick="openTab('web');toggleMenu()">🌐 Websites</div>
+  <div class="tab" onclick="openTab('reg');toggleMenu()">📝 Registration</div>
+  <div class="tab" onclick="openTab('attendance');toggleMenu()">📋 Attendance</div>
+  <div class="tab" onclick="openTab('accounting');toggleMenu()">💰 Accounting</div>
+  <div class="tab" onclick="openTab('library');toggleMenu()">📚 Library</div>
+  <div class="tab" onclick="openTab('property');toggleMenu()">🏠 Property</div>
+  <div class="tab" onclick="openTab('marketplace');toggleMenu()">🛒 Marketplace</div>
+  <div class="tab" onclick="openTab('docs');toggleMenu()">📄 Documentation</div>
+</div>
+
+<!-- TAB CONTENTS -->
 <div id="web" class="tab-content active">
   <div class="system">
     <h3>🌐 SME & Corporate Websites</h3>
-    <p>Professionally structured websites for SMEs, companies, NGOs, and institutions.</p>
-    <div class="price">Pricing: Fixed packages (SME & Corporate)</div>
-    <a href="websites.html">View Website Packages</a>
+    <p>Professionally structured websites for SMEs, corporates, NGOs and institutions.</p>
+    <div class="price">Fixed Package Pricing</div>
+    <a href="websites.html">View Packages</a>
   </div>
 </div>
 
-<!-- REGISTRATION -->
 <div id="reg" class="tab-content">
   <div class="system">
     <h3>📝 School Registration Portal</h3>
-    <p>Offline-capable learner registration for ECD, Primary, Secondary, Tertiary & Universities.</p>
+    <p>Offline-capable registration for ECD, Primary, Secondary, Tertiary & Universities.</p>
     <div class="price">USD $50.00 • Annual Licence</div>
-    <a href="school-registration-portals.html">Proceed to Licence</a>
+    <a href="school-registration-portals.html">Proceed</a>
   </div>
 </div>
 
-<!-- ATTENDANCE -->
 <div id="attendance" class="tab-content">
   <div class="system">
     <h3>📋 Attendance Register & Marker</h3>
-    <p>Attendance tracking, reporting, and learner analytics.</p>
-    <div class="price">USD $150.00 • One-Time Purchase</div>
-    <a href="attendance-register-marker.html">Proceed to Licence</a>
+    <p>Attendance tracking, reporting and analytics.</p>
+    <div class="price">USD $150.00 • One-Time</div>
+    <a href="attendance-register-marker.html">Proceed</a>
   </div>
 </div>
 
-<!-- ACCOUNTING -->
 <div id="accounting" class="tab-content">
   <div class="system">
     <h3>💰 School Accounting System</h3>
-    <p>Fees, payments, expenses, and school financial reporting.</p>
+    <p>Fees, payments, expenses and financial reports.</p>
     <div class="price">USD $350.00 • One-Time Licence</div>
-    <a href="school-accounting-system.html">Proceed to Licence</a>
+    <a href="school-accounting-system.html">Proceed</a>
   </div>
 </div>
 
-<!-- LIBRARY -->
 <div id="library" class="tab-content">
   <div class="system">
-    <h3>📚 School Digital Library</h3>
-    <p>Cloud-based digital lessons and learning resources for students.</p>
+    <h3>📚 Digital School Library</h3>
+    <p>Cloud-based digital lessons and resources.</p>
     <div class="price">USD $25.00 • Monthly Licence</div>
-    <a href="school-digital-library.html">Proceed to Licence</a>
+    <a href="school-digital-library.html">Proceed</a>
   </div>
 </div>
 
-<!-- PROPERTY -->
 <div id="property" class="tab-content">
   <div class="system">
     <h3>🏠 Property Management System</h3>
-    <p>Tenant, property, lease, and rental management for organizations.</p>
+    <p>Tenant, lease and rental management.</p>
     <div class="price">USD $500.00 • One-Time Licence</div>
-    <a href="property-management-system.html">Proceed to Licence</a>
+    <a href="property-management-system.html">Proceed</a>
   </div>
 </div>
 
-<!-- MARKETPLACE -->
 <div id="marketplace" class="tab-content">
   <div class="system">
     <h3>🛒 Marketplace System</h3>
-    <p>Digital marketplace with onboarding and maintenance support.</p>
-    <div class="price">USD $15.00 (Month 1) • USD $3.00 / month thereafter</div>
-    <a href="marketplace.html">Proceed to Licence</a>
+    <p>Marketplace onboarding with maintenance & debugging.</p>
+    <div class="price">$15 Month 1 • $3 Monthly</div>
+    <a href="marketplace.html">Proceed</a>
   </div>
 </div>
 
-<!-- DOCUMENTATION -->
 <div id="docs" class="tab-content">
   <div class="system">
-    <h3>📄 Business Documentation Pack</h3>
-    <p>Business profiles, service documentation, and compliant SME documents.</p>
+    <h3>📄 Documentation Pack</h3>
+    <p>Business profiles & compliant documentation.</p>
     <div class="price">USD $15.00 per document</div>
-    <a href="documentation-pack.html">Proceed to Request</a>
+    <a href="documentation-pack.html">Proceed</a>
   </div>
 </div>
 
@@ -328,7 +365,7 @@ footer a:hover{color:var(--accent)}
 <p>
 Onboarding Fee: <strong>USD $1.00</strong><br>
 Pay via <strong>PayNow</strong> or <strong>Bank / Mobile Banking</strong><br>
-Send Proof of Payment (POP) via WhatsApp
+Send Proof of Payment via WhatsApp
 </p>
 
 <p style="text-align:center">
@@ -346,10 +383,8 @@ Send Proof of Payment (POP) via WhatsApp
 <form id="agentForm">
 <label>Full Name</label>
 <input id="name" required>
-
 <label>Payment Reference</label>
 <input id="txnId" required>
-
 <button type="submit">Generate Agent Receipt</button>
 </form>
 
@@ -371,7 +406,7 @@ Send Proof of Payment (POP) via WhatsApp
 </main>
 
 <footer>
-© 2026 Sentinel Nexus Systems •
+© 2026 Sentinel Nexus Systems |
 <a href="terms-and-conditions.html">Terms</a> |
 <a href="privacy-policy.html">Privacy</a> |
 <a href="acceptable-use-policy.html">Acceptable Use</a> |
@@ -381,17 +416,20 @@ Send Proof of Payment (POP) via WhatsApp
 </footer>
 
 <script>
+function toggleMenu(){
+  document.getElementById("mobileTabs").classList.toggle("show");
+}
+
 function openTab(id){
-document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
-event.target.classList.add('active');
-document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
 }
 
 let FULL_NAME="", TXN_ID="", AGENT_ID="";
 
 function generateAgentID(){
-return "AG-"+Math.random().toString(36).substring(2,10).toUpperCase();
+  return "AG-"+Math.random().toString(36).substring(2,10).toUpperCase();
 }
 
 function receiptText(){
