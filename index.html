@@ -281,6 +281,7 @@ footer a{
   <div class="tab" onclick="openTab('docs');toggleMenu()">📄 Documentation</div>
 </div>
 
+<!-- TAB CONTENTS (UNCHANGED) -->
 <div id="web" class="tab-content active">
   <div class="system">
     <h3>🌐 SME & Corporate Websites</h3>
@@ -356,9 +357,28 @@ footer a{
 </div>
 </section>
 
+<!-- AGENT REGISTRATION (UNCHANGED CONTENT, FIXED FLOW) -->
 <section>
 <h2>🪪 Agent Registration</h2>
 <div class="card">
+
+<p>
+Onboarding Fee: <strong>USD $1.00</strong><br>
+Pay via <strong>PayNow</strong> or <strong>Bank / Mobile Banking</strong><br>
+Send Proof of Payment via WhatsApp
+</p>
+
+<p style="text-align:center">
+<a href="https://www.paynow.co.zw/Payment/Link/?q=c2VhcmNoPXNlbnRpbmVseHp3JTQwZ21haWwuY29tJmFtb3VudD0xLjAwJnJlZmVyZW5jZT1TZW50WC1BZ2VudC1TaWdudXAtMTExMiZsPTE%3d" target="_blank">
+<img src="https://www.paynow.co.zw/Content/Buttons/Medium_buttons/button_pay-now_medium.png">
+</a>
+</p>
+
+<p>
+<strong>Bank:</strong> BancABC (Bulawayo)<br>
+<strong>Account:</strong> Sentinel Nexus Systems PBC<br>
+<strong>Number:</strong> 92348806602321
+</p>
 
 <form id="agentForm">
 <label>Full Name</label>
@@ -377,7 +397,7 @@ footer a{
 </div>
 
 <div class="whatsapp" id="whatsappBtn">
-<a id="waLink" target="_blank">Send POP via WhatsApp</a>
+<a id="waLink" target="_blank">Send Receipt via WhatsApp</a>
 </div>
 
 </div>
@@ -424,9 +444,20 @@ function receiptText(){
 return `SENTINEL NEXUS SYSTEMS
 AGENT ONBOARDING RECEIPT
 
-Name: ${FULL_NAME}
-Reference: ${TXN_ID}
+Agent Name: ${FULL_NAME}
+Payment Reference: ${TXN_ID}
 Agent ID: ${AGENT_ID}
+
+Onboarding Fee: USD $1.00
+
+Agent Access & Pricing:
+• Websites & SME Packages
+• Business Systems & Platforms
+• Digital Documentation
+
+Commission:
+• Earn per successful onboarding
+• Rates communicated after verification
 
 Status: Pending Verification`;
 }
@@ -441,12 +472,9 @@ AGENT_ID=generateAgentID();
 agentIdBox.textContent=receiptText();
 agentIdBox.style.display="block";
 actions.style.display="grid";
-agentForm.style.display="none";
-
-waLink.href="https://wa.me/263787556929?text="+encodeURIComponent(receiptText());
 whatsappBtn.style.display="block";
 
-window.open(waLink.href,"_blank");
+waLink.href="https://wa.me/263787556929?text="+encodeURIComponent(receiptText());
 });
 
 function copyDetails(){navigator.clipboard.writeText(receiptText());}
