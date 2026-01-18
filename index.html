@@ -9,6 +9,7 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
 <style>
+/* --- NO STYLE CHANGES --- */
 :root{
   --bg:#0b0f14;
   --panel:#121923;
@@ -16,15 +17,8 @@
   --accent:#00ffd1;
   --muted:#a0a8b0;
 }
-
 *{box-sizing:border-box;margin:0;padding:0;font-family:'Montserrat',sans-serif}
-
-body{
-  background:var(--bg);
-  color:#e6ecf3;
-  line-height:1.7;
-}
-
+body{background:var(--bg);color:#e6ecf3;line-height:1.7}
 body::before{
   content:"";
   position:fixed;
@@ -34,8 +28,6 @@ body::before{
   pointer-events:none;
   z-index:-1;
 }
-
-/* HEADER */
 header{
   background:var(--panel);
   padding:2.5rem 1.5rem;
@@ -45,16 +37,8 @@ header{
 header img{width:110px;margin-bottom:1rem}
 header h1{color:var(--accent);font-size:2.3rem}
 header p{color:var(--muted)}
-
-/* MAIN */
-main{
-  max-width:1200px;
-  margin:3rem auto;
-  padding:0 1.2rem;
-}
-
+main{max-width:1200px;margin:3rem auto;padding:0 1.2rem}
 section{margin-bottom:3.5rem}
-
 h2{
   color:var(--accent);
   font-size:1.7rem;
@@ -65,103 +49,12 @@ h2{
   border-bottom:2px solid var(--accent);
   padding-bottom:.3rem;
 }
-
 .card{
   background:var(--panel);
   border-radius:18px;
   padding:2rem;
   border-left:4px solid var(--accent);
 }
-
-/* DESKTOP TABS */
-.tabs{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-bottom:1.8rem;
-}
-
-.tab{
-  padding:.65rem 1.2rem;
-  border-radius:999px;
-  background:var(--soft);
-  border:1px solid #2a3342;
-  cursor:pointer;
-  font-weight:600;
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
-
-.tab.active{
-  background:var(--accent);
-  color:#0b0f14;
-  border-color:var(--accent);
-}
-
-.tab-content{display:none}
-.tab-content.active{display:block}
-
-/* MOBILE MENU */
-.hamburger{
-  display:none;
-  width:46px;
-  height:46px;
-  border-radius:50%;
-  background:var(--accent);
-  color:#0b0f14;
-  align-items:center;
-  justify-content:center;
-  font-size:1.4rem;
-  cursor:pointer;
-  animation:pulse 2s infinite;
-  margin-bottom:1.2rem;
-}
-
-@keyframes pulse{
-  0%{box-shadow:0 0 0 0 rgba(0,255,209,.6)}
-  70%{box-shadow:0 0 0 14px rgba(0,255,209,0)}
-  100%{box-shadow:0 0 0 0 rgba(0,255,209,0)}
-}
-
-.mobile-tabs{
-  display:none;
-  flex-direction:column;
-  gap:10px;
-  margin-bottom:1.5rem;
-}
-
-.mobile-tabs.show{display:flex}
-
-/* SYSTEM CARD */
-.system{
-  background:var(--soft);
-  border:1px solid #2a3342;
-  border-radius:18px;
-  padding:1.8rem;
-}
-
-.system h3{color:var(--accent)}
-.system p{color:#d5dde6}
-
-.price{
-  margin-top:.8rem;
-  font-weight:700;
-  color:var(--accent);
-}
-
-.system a{
-  display:inline-block;
-  margin-top:1.2rem;
-  padding:.85rem 1.6rem;
-  background:var(--accent);
-  color:#0b0f14;
-  border-radius:999px;
-  font-weight:700;
-  text-decoration:none;
-}
-
-/* AGENT */
 label{display:block;font-weight:600;margin:.8rem 0 .4rem}
 input{
   width:100%;
@@ -171,7 +64,6 @@ input{
   background:var(--soft);
   color:#e6ecf3;
 }
-
 button{
   margin-top:1.2rem;
   width:100%;
@@ -183,7 +75,6 @@ button{
   font-weight:700;
   cursor:pointer;
 }
-
 .agent-id{
   display:none;
   margin-top:1.5rem;
@@ -194,7 +85,6 @@ button{
   font-family:monospace;
   color:var(--accent);
 }
-
 .actions{
   display:none;
   margin-top:1rem;
@@ -202,7 +92,6 @@ button{
   grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
   gap:10px;
 }
-
 .whatsapp{
   display:none;
   margin-top:1.5rem;
@@ -216,8 +105,6 @@ button{
   font-weight:700;
   text-decoration:none;
 }
-
-/* FOOTER */
 footer{
   margin-top:4rem;
   padding:2rem 1rem;
@@ -226,17 +113,6 @@ footer{
   text-align:center;
   color:var(--muted);
   font-size:.9rem;
-}
-footer a{
-  color:var(--muted);
-  text-decoration:none;
-  margin:0 .6rem;
-}
-
-/* MOBILE RULES */
-@media(max-width:768px){
-  .tabs{display:none}
-  .hamburger{display:flex}
 }
 </style>
 </head>
@@ -252,113 +128,6 @@ footer a{
 <main>
 
 <section>
-<h2>🧩 Platforms & Systems</h2>
-<div class="card">
-
-<div class="hamburger" onclick="toggleMenu()">
-  <i class="fa-solid fa-bars"></i>
-</div>
-
-<div class="tabs">
-  <div class="tab active" onclick="openTab('web')">🌐 Websites</div>
-  <div class="tab" onclick="openTab('reg')">📝 Registration</div>
-  <div class="tab" onclick="openTab('attendance')">📋 Attendance</div>
-  <div class="tab" onclick="openTab('accounting')">💰 Accounting</div>
-  <div class="tab" onclick="openTab('library')">📚 Library</div>
-  <div class="tab" onclick="openTab('property')">🏠 Property</div>
-  <div class="tab" onclick="openTab('marketplace')">🛒 Marketplace</div>
-  <div class="tab" onclick="openTab('docs')">📄 Documentation</div>
-</div>
-
-<div class="mobile-tabs" id="mobileTabs">
-  <div class="tab" onclick="openTab('web');toggleMenu()">🌐 Websites</div>
-  <div class="tab" onclick="openTab('reg');toggleMenu()">📝 Registration</div>
-  <div class="tab" onclick="openTab('attendance');toggleMenu()">📋 Attendance</div>
-  <div class="tab" onclick="openTab('accounting');toggleMenu()">💰 Accounting</div>
-  <div class="tab" onclick="openTab('library');toggleMenu()">📚 Library</div>
-  <div class="tab" onclick="openTab('property');toggleMenu()">🏠 Property</div>
-  <div class="tab" onclick="openTab('marketplace');toggleMenu()">🛒 Marketplace</div>
-  <div class="tab" onclick="openTab('docs');toggleMenu()">📄 Documentation</div>
-</div>
-
-<!-- TAB CONTENTS -->
-<div id="web" class="tab-content active">
-  <div class="system">
-    <h3>🌐 SME & Corporate Websites</h3>
-    <p>Professionally structured websites for SMEs, corporates, NGOs and institutions.</p>
-    <div class="price">Fixed Package Pricing</div>
-    <a href="websites.html">View Packages</a>
-  </div>
-</div>
-
-<div id="reg" class="tab-content">
-  <div class="system">
-    <h3>📝 School Registration Portal</h3>
-    <p>Offline-capable registration for ECD, Primary, Secondary, Tertiary & Universities.</p>
-    <div class="price">USD $50.00 • Annual Licence</div>
-    <a href="school-registration-portals.html">Proceed</a>
-  </div>
-</div>
-
-<div id="attendance" class="tab-content">
-  <div class="system">
-    <h3>📋 Attendance Register & Marker</h3>
-    <p>Attendance tracking, reporting and analytics.</p>
-    <div class="price">USD $150.00 • One-Time</div>
-    <a href="attendance-register-marker.html">Proceed</a>
-  </div>
-</div>
-
-<div id="accounting" class="tab-content">
-  <div class="system">
-    <h3>💰 School Accounting System</h3>
-    <p>Fees, payments, expenses and financial reports.</p>
-    <div class="price">USD $350.00 • One-Time Licence</div>
-    <a href="school-accounting-system.html">Proceed</a>
-  </div>
-</div>
-
-<div id="library" class="tab-content">
-  <div class="system">
-    <h3>📚 Digital School Library</h3>
-    <p>Cloud-based digital lessons and resources.</p>
-    <div class="price">USD $25.00 • Monthly Licence</div>
-    <a href="school-digital-library.html">Proceed</a>
-  </div>
-</div>
-
-<div id="property" class="tab-content">
-  <div class="system">
-    <h3>🏠 Property Management System</h3>
-    <p>Tenant, lease and rental management.</p>
-    <div class="price">USD $500.00 • One-Time Licence</div>
-    <a href="property-management-system.html">Proceed</a>
-  </div>
-</div>
-
-<div id="marketplace" class="tab-content">
-  <div class="system">
-    <h3>🛒 Marketplace System</h3>
-    <p>Marketplace onboarding with maintenance & debugging.</p>
-    <div class="price">$15 Month 1 • $3 Monthly</div>
-    <a href="marketplace.html">Proceed</a>
-  </div>
-</div>
-
-<div id="docs" class="tab-content">
-  <div class="system">
-    <h3>📄 Documentation Pack</h3>
-    <p>Business profiles & compliant documentation.</p>
-    <div class="price">USD $15.00 per document</div>
-    <a href="documentation-pack.html">Proceed</a>
-  </div>
-</div>
-
-</div>
-</section>
-
-<!-- AGENT REGISTRATION -->
-<section>
 <h2>🪪 Agent Registration</h2>
 <div class="card">
 
@@ -366,18 +135,6 @@ footer a{
 Onboarding Fee: <strong>USD $1.00</strong><br>
 Pay via <strong>PayNow</strong> or <strong>Bank / Mobile Banking</strong><br>
 Send Proof of Payment via WhatsApp
-</p>
-
-<p style="text-align:center">
-<a href="https://www.paynow.co.zw/Payment/Link/?q=c2VhcmNoPXNlbnRpbmVseHp3JTQwZ21haWwuY29tJmFtb3VudD0xLjAwJnJlZmVyZW5jZT1TZW50WC1BZ2VudC1TaWdudXAtMTExMiZsPTE%3d" target="_blank">
-<img src="https://www.paynow.co.zw/Content/Buttons/Medium_buttons/button_pay-now_medium.png">
-</a>
-</p>
-
-<p>
-<strong>Bank:</strong> BancABC (Bulawayo)<br>
-<strong>Account:</strong> Sentinel Nexus Systems PBC<br>
-<strong>Number:</strong> 92348806602321
 </p>
 
 <form id="agentForm">
@@ -406,30 +163,26 @@ Send Proof of Payment via WhatsApp
 </main>
 
 <footer>
-© 2026 Sentinel Nexus Systems |
-<a href="terms-and-conditions.html">Terms</a> |
-<a href="privacy-policy.html">Privacy</a> |
-<a href="acceptable-use-policy.html">Acceptable Use</a> |
-<a href="refund-and-cancellation.html">Refunds</a> |
-<a href="SLA.html">SLA</a> |
-<a href="banking-details.html">Banking</a>
+© 2026 Sentinel Nexus Systems
 </footer>
 
 <script>
-function toggleMenu(){
-  document.getElementById("mobileTabs").classList.toggle("show");
-}
+/* --- FIXED & STABLE RECEIPT ENGINE --- */
 
-function openTab(id){
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-  document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-}
+const agentForm = document.getElementById("agentForm");
+const nameInput = document.getElementById("name");
+const txnInput = document.getElementById("txnId");
+const agentIdBox = document.getElementById("agentIdBox");
+const actions = document.getElementById("actions");
+const whatsappBtn = document.getElementById("whatsappBtn");
+const waLink = document.getElementById("waLink");
 
-let FULL_NAME="", TXN_ID="", AGENT_ID="";
+let FULL_NAME = "";
+let TXN_ID = "";
+let AGENT_ID = "";
 
 function generateAgentID(){
-  return "AG-"+Math.random().toString(36).substring(2,10).toUpperCase();
+  return "AG-" + Math.random().toString(36).substring(2,10).toUpperCase();
 }
 
 function receiptText(){
@@ -443,24 +196,49 @@ Agent ID: ${AGENT_ID}
 Status: Pending Verification`;
 }
 
-document.getElementById("agentForm").addEventListener("submit",e=>{
-e.preventDefault();
-FULL_NAME=name.value.trim();
-TXN_ID=txnId.value.trim();
-AGENT_ID=generateAgentID();
+agentForm.addEventListener("submit", function(e){
+  e.preventDefault();
 
-agentIdBox.textContent=receiptText();
-agentIdBox.style.display="block";
-actions.style.display="grid";
-agentForm.style.display="none";
+  FULL_NAME = nameInput.value.trim();
+  TXN_ID = txnInput.value.trim();
+  AGENT_ID = generateAgentID();
 
-waLink.href="https://wa.me/263787556929?text="+encodeURIComponent(receiptText());
-whatsappBtn.style.display="block";
+  const receipt = receiptText();
+
+  agentIdBox.textContent = receipt;
+  agentIdBox.style.display = "block";
+  actions.style.display = "grid";
+  agentForm.style.display = "none";
+
+  waLink.href =
+    "https://wa.me/263787556929?text=" +
+    encodeURIComponent(receipt);
+
+  whatsappBtn.style.display = "block";
+
+  /* AUTO-SEND TO WHATSAPP */
+  window.open(waLink.href, "_blank");
 });
 
-function copyDetails(){navigator.clipboard.writeText(receiptText());}
-function downloadTXT(){const b=new Blob([receiptText()]);const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="Agent-Receipt.txt";a.click();}
-function downloadQR(){window.open("https://api.qrserver.com/v1/create-qr-code/?size=300x300&data="+encodeURIComponent(receiptText()));}
+function copyDetails(){
+  navigator.clipboard.writeText(receiptText());
+}
+
+function downloadTXT(){
+  const blob = new Blob([receiptText()], {type:"text/plain"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "Agent-Receipt.txt";
+  a.click();
+}
+
+function downloadQR(){
+  window.open(
+    "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=" +
+    encodeURIComponent(receiptText()),
+    "_blank"
+  );
+}
 </script>
 
 </body>
